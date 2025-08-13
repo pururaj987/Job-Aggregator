@@ -9,7 +9,6 @@ import java.util.Collection;
 import java.util.List;
 
 public interface JobRepository extends JpaRepository<Job, String> {
-    List<Job> findByTitleContainingIgnoreCaseOrCompanyContainingIgnoreCase(String title, String company);
 
     @Query("SELECT j FROM Job j WHERE " +
             "(?1 IS NULL OR LOWER(j.title) LIKE LOWER(CONCAT('%', ?1, '%'))) AND " +

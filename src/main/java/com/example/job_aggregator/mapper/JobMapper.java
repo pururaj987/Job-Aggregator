@@ -27,24 +27,6 @@ public class JobMapper {
                 .build();
     }
 
-    public Job toEntity(JobResource resource) {
-        if (resource == null) {
-            return null;
-        }
-
-        Job entity = new Job();
-        entity.setId(resource.getId());
-        entity.setTitle(resource.getTitle());
-        entity.setCompany(resource.getCompany());
-        entity.setLocation(resource.getLocation());
-        entity.setDescription(resource.getDescription());
-        entity.setSourceUrl(resource.getSourceUrl());
-        entity.setJobBoard(resource.getJobBoard());
-        entity.setSalary(resource.getSalary());
-        entity.setScrapedAt(resource.getScrapedAt());
-        return entity;
-    }
-
     public List<JobResource> toResourceList(List<Job> entities) {
         return entities.stream()
                 .map(this::toResource)

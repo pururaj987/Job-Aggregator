@@ -69,14 +69,6 @@ public class SavedJobController {
                     )
             ),
             @ApiResponse(
-                    responseCode = "200",
-                    description = "Job was already saved (returns existing)",
-                    content = @Content(
-                            mediaType = "application/json",
-                            schema = @Schema(implementation = SavedJobResource.class)
-                    )
-            ),
-            @ApiResponse(
                     responseCode = "404",
                     description = "Job not found",
                     content = @Content(
@@ -169,10 +161,6 @@ public class SavedJobController {
                             mediaType = "text/csv",
                             schema = @Schema(type = "string", format = "binary")
                     )
-            ),
-            @ApiResponse(
-                    responseCode = "204",
-                    description = "No applied jobs found (empty file)"
             ),
             @ApiResponse(responseCode = "500", description = "Failed to generate CSV")
     })
